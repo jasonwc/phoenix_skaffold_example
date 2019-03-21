@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: phoenix-no-db
-          image: phoenix-no-db
+          image: 127.0.0.1:32000/phoenix-no-db
           ports:
             - containerPort: 4000
           env:
