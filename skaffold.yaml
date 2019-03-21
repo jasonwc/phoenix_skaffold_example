@@ -1,0 +1,11 @@
+apiVersion: skaffold/v1beta7
+kind: Config
+build:
+  artifacts:
+  - image: phoenix-no-db
+    docker:
+      dockerfile: Dockerfile.local
+deploy:
+  kubectl:
+    manifests:
+    - deployment.yml

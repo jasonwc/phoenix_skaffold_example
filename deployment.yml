@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: phoenix-no-db-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: phoenix-no-db
+    spec:
+      containers:
+        - name: phoenix-no-db
+          image: phoenix-no-db
+          ports:
+            - containerPort: 4000
+          env:
+          - name: PORT
+            value: "4000"
+          - name: HOST
+            value: localhost
+          - name: SECRET_KEY_BASE
+            value: highlysecretkey
